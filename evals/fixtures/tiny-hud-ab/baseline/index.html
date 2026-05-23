@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tiny HUD Baseline</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="arena" aria-label="combat arena">
+        <div class="enemy">Enemy</div>
+        <div class="player">Player</div>
+      </section>
+
+      <section class="hud" aria-label="baseline HUD">
+        <div class="resource">HP 42/100</div>
+        <div class="resource">STA 61/100</div>
+        <div class="status">Poison 2s</div>
+        <div class="status">Haste 4s</div>
+        <div class="quest">Find the gate key</div>
+        <div class="pickup">Press E: Iron Charm</div>
+        <div class="warning">Incoming strike</div>
+      </section>
+    </main>
+    <script type="module" src="./game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  background: #20242c;
+  color: #f6efe4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.arena {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #2f3943, #161a20);
+}
+
+.enemy,
+.player {
+  position: absolute;
+  padding: 18px 22px;
+  border: 2px solid #f6efe4;
+  border-radius: 6px;
+}
+
+.enemy {
+  top: 26%;
+  right: 28%;
+}
+
+.player {
+  bottom: 24%;
+  left: 34%;
+}
+
+.hud {
+  position: absolute;
+  inset: 18px;
+  pointer-events: none;
+}
+
+.resource,
+.status,
+.quest,
+.pickup,
+.warning {
+  display: inline-block;
+  margin: 4px;
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.56);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.warning {
+  color: #ffd0c2;
+}

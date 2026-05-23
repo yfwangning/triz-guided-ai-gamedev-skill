@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  background: #20242c;
+  color: #f6efe4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.arena {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #2f3943, #161a20);
+}
+
+.enemy,
+.player {
+  position: absolute;
+  padding: 18px 22px;
+  border: 2px solid #f6efe4;
+  border-radius: 6px;
+}
+
+.enemy {
+  top: 26%;
+  right: 28%;
+}
+
+.player {
+  bottom: 24%;
+  left: 34%;
+}
+
+.core-hud,
+.context-signal,
+.debug-panel,
+.scenario-switcher {
+  position: absolute;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+
+.core-hud {
+  top: 16px;
+  left: 16px;
+}
+
+.context-signal {
+  left: 50%;
+  bottom: 18%;
+  width: min(360px, calc(100vw - 40px));
+  transform: translateX(-50%);
+  text-align: center;
+  border-color: #ef9b83;
+}
+
+.signal-title {
+  color: #ffd0c2;
+  font-weight: 700;
+}
+
+.debug-panel {
+  right: 16px;
+  bottom: 16px;
+  width: 280px;
+  color: #b6c8c1;
+}
+
+.scenario-switcher {
+  right: 16px;
+  top: 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 310px;
+}
+
+button {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background: #fff7e3;
+  color: #1d2330;
+  cursor: pointer;
+  font: inherit;
+  padding: 6px 8px;
+}

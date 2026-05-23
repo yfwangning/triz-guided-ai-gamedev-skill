@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  background: #1f242b;
+  color: #f6efe4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.arena {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #2f3945, #171b20);
+}
+
+.enemy,
+.player {
+  position: absolute;
+  padding: 18px 24px;
+  border: 2px solid rgba(246, 239, 228, 0.86);
+  border-radius: 6px;
+}
+
+.enemy {
+  right: 28%;
+  top: 28%;
+}
+
+.player {
+  left: 34%;
+  bottom: 24%;
+}
+
+.resource-panel,
+.quest-panel,
+.status-panel,
+.pickup-panel,
+.combat-log,
+.minimap,
+.settings-panel,
+.tutorial-panel {
+  position: absolute;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.68);
+}
+
+.resource-panel {
+  left: 16px;
+  top: 16px;
+}
+
+.status-panel {
+  left: 16px;
+  top: 126px;
+  width: 190px;
+}
+
+.quest-panel {
+  right: 16px;
+  top: 16px;
+  width: 230px;
+}
+
+.settings-panel {
+  right: 16px;
+  top: 176px;
+  width: 230px;
+}
+
+.tutorial-panel {
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.pickup-panel {
+  left: 16px;
+  bottom: 156px;
+  width: 220px;
+}
+
+.minimap {
+  left: 16px;
+  bottom: 16px;
+  width: 220px;
+  height: 110px;
+}
+
+.combat-log {
+  right: 16px;
+  bottom: 16px;
+  width: 280px;
+}

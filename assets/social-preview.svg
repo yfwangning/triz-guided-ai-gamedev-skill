@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Stop AI From Overbuilding Your Game</title>
+  <desc id="desc">Social preview for Natural GameDev Prototype Guardrails.</desc>
+  <rect width="1280" height="640" fill="#f7f3ea"/>
+  <rect x="64" y="64" width="1152" height="512" rx="28" fill="#fffaf0" stroke="#d7cab7" stroke-width="3"/>
+  <text x="104" y="142" fill="#277a69" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Natural GameDev Prototype Guardrails</text>
+  <text x="104" y="238" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="800">Stop AI From</text>
+  <text x="104" y="324" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="800">Overbuilding Your Game</text>
+  <rect x="104" y="382" width="508" height="112" rx="18" fill="#ffe9df" stroke="#ef9b83" stroke-width="2"/>
+  <text x="132" y="428" fill="#8d2018" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Generic AI</text>
+  <text x="132" y="466" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="24">adds attacks, summons, rage mode</text>
+  <rect x="668" y="382" width="508" height="112" rx="18" fill="#e8f4ee" stroke="#8bc4b4" stroke-width="2"/>
+  <text x="696" y="428" fill="#277a69" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Guided Skill</text>
+  <text x="696" y="466" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="24">asks for the smallest playable test</text>
+  <text x="104" y="548" fill="#657084" font-family="Arial, Helvetica, sans-serif" font-size="26">No design-theory knowledge required · Claude Code · Codex · AI GameDev</text>
+</svg>

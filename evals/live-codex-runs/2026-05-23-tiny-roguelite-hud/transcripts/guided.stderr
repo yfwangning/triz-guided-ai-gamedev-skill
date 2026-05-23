@@ -1,0 +1,8 @@
+Sanitized stderr summary for the guided Codex run.
+
+- The Codex websocket connection failed several times and then fell back to HTTP.
+- Curated plugin sync timed out and fell back to HTTP.
+- The nested browser/screenshot attempt could not find the temporary image path.
+- The browser MCP process cleanup emitted a harmless "No such process" warning at shutdown.
+
+Raw local machine paths and internal service URLs were removed before publishing.

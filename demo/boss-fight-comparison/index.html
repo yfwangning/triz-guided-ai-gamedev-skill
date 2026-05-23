@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TRIZ Boss Fight Comparison</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar" aria-label="Demo controls">
+        <div>
+          <p class="eyebrow">Tiny playable test</p>
+          <h1>Boss 惊喜感 vs 公平学习</h1>
+        </div>
+        <div class="controls">
+          <button id="modeGeneric" class="mode-button active" type="button">普通 AI 方案</button>
+          <button id="modeTriz" class="mode-button" type="button">引导方案</button>
+          <button id="restart" class="icon-button" type="button" title="Restart">↻</button>
+        </div>
+      </section>
+
+      <section class="demo-grid">
+        <div class="playfield-wrap">
+          <canvas id="game" width="720" height="420" aria-label="Boss fight demo"></canvas>
+          <div class="mobile-controls" aria-label="Mobile controls">
+            <button data-move="-1" type="button">←</button>
+            <button data-dash="1" type="button">Dash</button>
+            <button data-move="1" type="button">→</button>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Comparison notes">
+          <div class="stat-row">
+            <span>当前模式</span>
+            <strong id="modeLabel">普通 AI 方案</strong>
+          </div>
+          <div class="stat-row">
+            <span>存活时间</span>
+            <strong id="time">0.0s</strong>
+          </div>
+          <div class="stat-row">
+            <span>命中次数</span>
+            <strong id="hits">0</strong>
+          </div>
+          <div class="stat-row">
+            <span>公平性线索</span>
+            <strong id="fairness">低</strong>
+          </div>
+
+          <div class="note-block">
+            <h2 id="modeTitle">普通 AI 方案：用随机加招制造惊喜</h2>
+            <p id="modeCopy">
+              它确实更“热闹”，但攻击规则、前摇和命中原因不稳定。玩家容易觉得自己是被随机惩罚，而不是学会了 Boss。
+            </p>
+          </div>
+
+          <div class="note-block">
+            <h2>操作</h2>
+            <p>键盘：A/D 或 ←/→ 移动，Space 闪避。目标不是赢，而是观察命中原因是否可学习。</p>
+          </div>
+
+          <div class="log-box">
+            <h2>命中 / 躲避日志</h2>
+            <ol id="log"></ol>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+Sanitized stderr summary for the no-workflow Codex run.
+
+- The Codex websocket connection failed several times and then fell back to HTTP.
+- Telemetry emitted warnings for injected skill names containing punctuation.
+- The browser MCP process cleanup emitted a harmless "No such process" warning at shutdown.
+
+Raw local machine paths and internal service URLs were removed before publishing.

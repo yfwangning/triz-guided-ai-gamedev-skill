@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="560" viewBox="0 0 1280 560" role="img" aria-labelledby="title desc">
+  <title id="title">TRIZ-inspired tradeoff workflow</title>
+  <desc id="desc">A diagram showing how a natural game-development complaint becomes a tradeoff, a solution pattern, a small playable test, and verification.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#277a69"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="560" fill="#f7f3ea"/>
+  <rect x="48" y="44" width="1184" height="472" rx="24" fill="#fffaf0" stroke="#d7cab7" stroke-width="3"/>
+  <text x="86" y="104" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800">TRIZ in this project</text>
+  <text x="86" y="142" fill="#657084" font-family="Arial, Helvetica, sans-serif" font-size="22">A tradeoff lens for AI game development, not a theory lecture.</text>
+
+  <rect x="76" y="196" width="205" height="172" rx="16" fill="#ffffff" stroke="#c9d8d3" stroke-width="2"/>
+  <text x="102" y="238" fill="#277a69" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Natural complaint</text>
+  <text x="102" y="282" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">Boss phase 2</text>
+  <text x="102" y="314" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">is boring, but</text>
+  <text x="102" y="346" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">do not make it cheap.</text>
+
+  <line x1="298" y1="282" x2="365" y2="282" stroke="#277a69" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="382" y="196" width="205" height="172" rx="16" fill="#e8f4ee" stroke="#8bc4b4" stroke-width="2"/>
+  <text x="410" y="238" fill="#277a69" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Core tradeoff</text>
+  <text x="410" y="282" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">Improve tension</text>
+  <text x="410" y="314" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">without unfair</text>
+  <text x="410" y="346" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">deaths.</text>
+
+  <line x1="604" y1="282" x2="671" y2="282" stroke="#277a69" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="688" y="196" width="205" height="172" rx="16" fill="#fff7e3" stroke="#e0bd6d" stroke-width="2"/>
+  <text x="716" y="238" fill="#8a6420" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Pattern choice</text>
+  <text x="716" y="282" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">Teach first,</text>
+  <text x="716" y="314" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">then vary timing</text>
+  <text x="716" y="346" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">or conditions.</text>
+
+  <line x1="910" y1="282" x2="977" y2="282" stroke="#277a69" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="994" y="196" width="205" height="172" rx="16" fill="#ffe9df" stroke="#ef9b83" stroke-width="2"/>
+  <text x="1022" y="238" fill="#8d2018" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Small test</text>
+  <text x="1022" y="282" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">One readable</text>
+  <text x="1022" y="314" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">attack family</text>
+  <text x="1022" y="346" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="22">plus one variant.</text>
+
+  <rect x="146" y="414" width="988" height="58" rx="14" fill="#1d2330"/>
+  <text x="178" y="451" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Verification:</text>
+  <text x="306" y="451" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">Can players explain why they were hit, and adapt on the next try?</text>
+</svg>

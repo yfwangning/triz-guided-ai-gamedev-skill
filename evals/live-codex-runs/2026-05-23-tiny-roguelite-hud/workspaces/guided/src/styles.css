@@ -1,0 +1,263 @@
+:root {
+  --hud-bg: rgba(8, 12, 16, 0.74);
+  --hud-bg-soft: rgba(8, 12, 16, 0.5);
+  --hud-border: rgba(245, 231, 205, 0.16);
+  --hud-text: #f6efe4;
+  --hud-muted: rgba(246, 239, 228, 0.72);
+  --hud-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  --health: #ef7d57;
+  --health-hot: #ffb26a;
+  --stamina: #66c2a5;
+  --danger-bg: rgba(77, 20, 14, 0.88);
+  --danger-border: rgba(255, 182, 115, 0.32);
+}
+
+body {
+  margin: 0;
+  background: #1f242b;
+  color: var(--hud-text);
+  font-family: "Trebuchet MS", "Arial Narrow", sans-serif;
+}
+
+.game {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.arena {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(242, 209, 142, 0.08), transparent 24%),
+    linear-gradient(180deg, #33404d, #171b20 58%);
+}
+
+.enemy,
+.player {
+  position: absolute;
+  padding: 18px 24px;
+  border: 2px solid rgba(246, 239, 228, 0.72);
+  border-radius: 8px;
+  background: rgba(6, 9, 12, 0.18);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.enemy {
+  right: 28%;
+  top: 28%;
+}
+
+.player {
+  left: 34%;
+  bottom: 24%;
+}
+
+.hud {
+  position: absolute;
+  inset: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.hud-top,
+.hud-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hud-bottom {
+  align-items: flex-end;
+}
+
+.objective-chip,
+.pickup-chip,
+.vitals-card,
+.alert-pill {
+  backdrop-filter: blur(10px);
+  box-shadow: var(--hud-shadow);
+}
+
+.objective-chip,
+.pickup-chip {
+  max-width: min(320px, 52vw);
+  padding: 10px 14px;
+  border: 1px solid var(--hud-border);
+  border-radius: 14px;
+  background: var(--hud-bg-soft);
+}
+
+.pickup-chip {
+  text-align: right;
+}
+
+.alert-pill {
+  max-width: min(360px, 55vw);
+  padding: 12px 16px;
+  border: 1px solid var(--danger-border);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--danger-bg), rgba(18, 10, 9, 0.9));
+  animation: alertPulse 1.8s ease-in-out infinite;
+}
+
+.alert-pill[data-tone="warning"] {
+  border-color: rgba(241, 194, 123, 0.28);
+  background: linear-gradient(135deg, rgba(79, 52, 18, 0.88), rgba(18, 11, 8, 0.9));
+  animation-duration: 2.4s;
+}
+
+.vitals-card {
+  width: min(320px, calc(100vw - 32px));
+  padding: 14px;
+  border: 1px solid var(--hud-border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(9, 12, 16, 0.9), rgba(8, 12, 16, 0.68));
+}
+
+.vitals-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.hud-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--hud-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.meter-row + .meter-row {
+  margin-top: 10px;
+}
+
+.meter-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  font-size: 0.94rem;
+}
+
+.meter-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.meter-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 180ms ease-out;
+}
+
+.meter-fill[data-tone="health"] {
+  background: linear-gradient(90deg, var(--health), var(--health-hot));
+}
+
+.meter-fill[data-tone="stamina"] {
+  background: linear-gradient(90deg, #438b79, var(--stamina));
+}
+
+.meter-fill[data-level="warning"] {
+  filter: saturate(0.92) brightness(0.94);
+}
+
+.meter-fill[data-level="critical"] {
+  box-shadow: 0 0 14px rgba(239, 125, 87, 0.38);
+}
+
+.status-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.82rem;
+  color: var(--hud-text);
+}
+
+.status-chip[data-tone="danger"] {
+  border-color: rgba(239, 125, 87, 0.34);
+  background: rgba(115, 31, 24, 0.6);
+}
+
+.status-chip[data-tone="warning"] {
+  border-color: rgba(241, 194, 123, 0.24);
+  background: rgba(83, 57, 20, 0.52);
+}
+
+.status-chip[data-tone="quiet"] {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--hud-muted);
+}
+
+.objective-chip strong,
+.pickup-chip strong,
+.alert-pill strong,
+.vitals-header strong,
+.meter-meta strong {
+  font-weight: 700;
+}
+
+@keyframes alertPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: var(--hud-shadow);
+  }
+
+  50% {
+    transform: translateY(-1px);
+    box-shadow: 0 20px 42px rgba(0, 0, 0, 0.34);
+  }
+}
+
+@media (max-width: 720px) {
+  .hud-top,
+  .hud-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hud-bottom {
+    align-items: stretch;
+  }
+
+  .objective-chip,
+  .pickup-chip,
+  .alert-pill,
+  .vitals-card {
+    max-width: none;
+  }
+
+  .pickup-chip {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alert-pill,
+  .meter-fill {
+    animation: none;
+    transition: none;
+  }
+}

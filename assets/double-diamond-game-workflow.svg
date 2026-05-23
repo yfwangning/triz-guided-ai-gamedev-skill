@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="560" viewBox="0 0 1280 560" role="img" aria-labelledby="title desc">
+  <title id="title">Double Diamond game-design workflow</title>
+  <desc id="desc">A diagram showing problem divergence, problem convergence, solution divergence, and solution convergence for AI-assisted game development.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#277a69"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="560" fill="#f7f3ea"/>
+  <rect x="48" y="44" width="1184" height="472" rx="24" fill="#fffaf0" stroke="#d7cab7" stroke-width="3"/>
+  <text x="86" y="104" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800">Double Diamond in this project</text>
+  <text x="86" y="142" fill="#657084" font-family="Arial, Helvetica, sans-serif" font-size="22">Use it when the user wants more creativity before choosing the smallest playable test.</text>
+
+  <polygon points="104,288 300,160 496,288 300,416" fill="#e8f4ee" stroke="#8bc4b4" stroke-width="4"/>
+  <polygon points="560,288 756,160 952,288 756,416" fill="#fff7e3" stroke="#e0bd6d" stroke-width="4"/>
+  <line x1="500" y1="288" x2="552" y2="288" stroke="#277a69" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="958" y1="288" x2="1064" y2="288" stroke="#277a69" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <text x="300" y="278" text-anchor="middle" fill="#277a69" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800">Problem</text>
+  <text x="300" y="318" text-anchor="middle" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">space</text>
+
+  <text x="756" y="278" text-anchor="middle" fill="#8a6420" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800">Solution</text>
+  <text x="756" y="318" text-anchor="middle" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">space</text>
+
+  <rect x="1068" y="220" width="144" height="136" rx="16" fill="#ffe9df" stroke="#ef9b83" stroke-width="2"/>
+  <text x="1096" y="266" fill="#8d2018" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800">Build</text>
+  <text x="1096" y="300" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="21">Verify</text>
+  <text x="1096" y="330" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="21">Iterate</text>
+
+  <rect x="86" y="426" width="250" height="52" rx="12" fill="#ffffff" stroke="#c9d8d3" stroke-width="2"/>
+  <text x="106" y="449" fill="#277a69" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">1. Problem diverge</text>
+  <text x="106" y="470" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="16">Meanings of the complaint</text>
+
+  <rect x="354" y="426" width="250" height="52" rx="12" fill="#ffffff" stroke="#c9d8d3" stroke-width="2"/>
+  <text x="374" y="449" fill="#277a69" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">2. Problem converge</text>
+  <text x="374" y="470" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="16">First tradeoff to solve</text>
+
+  <rect x="622" y="426" width="250" height="52" rx="12" fill="#ffffff" stroke="#e0bd6d" stroke-width="2"/>
+  <text x="642" y="449" fill="#8a6420" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">3. Solution diverge</text>
+  <text x="642" y="470" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="16">Safe, weird, systemic options</text>
+
+  <rect x="890" y="426" width="250" height="52" rx="12" fill="#ffffff" stroke="#e0bd6d" stroke-width="2"/>
+  <text x="910" y="449" fill="#8a6420" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">4. Solution converge</text>
+  <text x="910" y="470" fill="#1d2330" font-family="Arial, Helvetica, sans-serif" font-size="16">Smallest playable test</text>
+
+  <text x="146" y="504" fill="#657084" font-family="Arial, Helvetica, sans-serif" font-size="20">Default mode stays short. Double Diamond is opt-in for exploration, brainstorming, or avoiding early convergence.</text>
+</svg>
