@@ -204,6 +204,7 @@ For online hosting, see [docs/github-pages.md](docs/github-pages.md).
 ## What's Included
 
 ```text
+SKILL.md
 demo/boss-fight-comparison/
 claude-code/triz-guided-ai-gamedev/SKILL.md
 claude-code/triz-guided-ai-gamedev/references/
@@ -216,9 +217,36 @@ scripts/
 assets/
 ```
 
-## Install For Claude Code
+## Install From GitHub
+
+The repository can be pulled directly like a normal GitHub project.
+
+Claude Code personal skill:
+
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/yfwangning/triz-guided-ai-gamedev-skill.git ~/.claude/skills/triz-guided-ai-gamedev
+```
+
+Codex local skill:
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/yfwangning/triz-guided-ai-gamedev-skill.git ~/.codex/skills/triz-guided-ai-gamedev
+```
+
+Update later:
+
+```bash
+git -C ~/.claude/skills/triz-guided-ai-gamedev pull
+git -C ~/.codex/skills/triz-guided-ai-gamedev pull
+```
 
 Detailed install notes: [docs/install.md](docs/install.md).
+
+## Script Install For Claude Code
+
+If you already cloned this repository, you can also use the helper script.
 
 Personal install:
 
@@ -238,7 +266,7 @@ Then try:
 My RPG combat skills are getting hard to extend. Propose a small data-driven skill prototype before changing the whole combat system.
 ```
 
-## Install For Codex
+## Project Instructions For Codex
 
 Copy the project instructions into the root of the game repository you want Codex to work on:
 

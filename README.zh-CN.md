@@ -204,6 +204,7 @@ Prototype brief:
 ## 包含内容
 
 ```text
+SKILL.md
 demo/boss-fight-comparison/
 claude-code/triz-guided-ai-gamedev/SKILL.md
 claude-code/triz-guided-ai-gamedev/references/
@@ -216,9 +217,36 @@ scripts/
 assets/
 ```
 
-## 安装到 Claude Code
+## 从 GitHub 直接安装
+
+这个仓库现在可以像普通 GitHub 项目一样直接拉取。
+
+安装成 Claude Code 个人 skill：
+
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/yfwangning/triz-guided-ai-gamedev-skill.git ~/.claude/skills/triz-guided-ai-gamedev
+```
+
+安装成 Codex 本地 skill：
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/yfwangning/triz-guided-ai-gamedev-skill.git ~/.codex/skills/triz-guided-ai-gamedev
+```
+
+以后更新：
+
+```bash
+git -C ~/.claude/skills/triz-guided-ai-gamedev pull
+git -C ~/.codex/skills/triz-guided-ai-gamedev pull
+```
 
 详细安装说明：[docs/install.md](docs/install.md)。
+
+## 脚本安装到 Claude Code
+
+如果你已经 clone 了这个仓库，也可以使用辅助脚本。
 
 个人全局安装：
 
@@ -238,7 +266,7 @@ bash scripts/install-claude-skill.sh --project .
 我的 RPG 技能越来越难扩展。先提出一个小的数据驱动技能原型，不要一上来重写整个战斗系统。
 ```
 
-## 安装到 Codex
+## 安装成 Codex 项目指令
 
 把项目指令复制到你的游戏项目根目录：
 
