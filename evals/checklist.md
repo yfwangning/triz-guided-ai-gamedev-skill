@@ -14,6 +14,8 @@ Use this checklist to review whether an output is useful enough to hand to a cod
 - Includes non-goals or constraints that prevent scope creep.
 - Produces acceptance criteria that can be checked.
 
+For image-generation outputs, the same structure can be expressed as an `Image brief`: must show, must avoid, content budget, text/anatomy risk, and check.
+
 ## Quality Signals
 
 - The prototype is smaller than the full imagined feature.
@@ -22,6 +24,7 @@ Use this checklist to review whether an output is useful enough to hand to a cod
 - Debugging, logging, screenshots, or playtest notes are included when useful.
 - The plan protects existing architecture and naming conventions.
 - The recommendation is specific enough that a coding agent can start.
+- For generated images, the prompt has a small content budget and a concrete visual review checklist.
 
 ## Warning Signs
 
@@ -31,6 +34,8 @@ Use this checklist to review whether an output is useful enough to hand to a cod
 - It has no verification step.
 - It has no acceptance criteria.
 - It treats placeholder assets or greybox work as a failure rather than a deliberate prototype stage.
+- It tries to fix wrong text, extra limbs, or unwanted objects by adding many more unrelated prompt details.
+- It asks for exact typography, UI labels, multiple characters, complex anatomy, and final polish in one generation without a review gate.
 
 ## Manual Scoring
 
@@ -60,6 +65,7 @@ See:
 - [prompts/combat-depth.md](prompts/combat-depth.md)
 - [prompts/hud-clarity.md](prompts/hud-clarity.md)
 - [prompts/ai-art-style.md](prompts/ai-art-style.md)
+- [prompts/gpt-image-2-content-control.md](prompts/gpt-image-2-content-control.md)
 - [prompts/passive-trigger.md](prompts/passive-trigger.md)
 - [prompts/double-diamond-boss.md](prompts/double-diamond-boss.md)
 - [prompts/triz-principle-mapping.md](prompts/triz-principle-mapping.md)
@@ -82,6 +88,7 @@ Run:
 node scripts/check-eval-output.mjs evals/sample-outputs/combat-depth-good.md
 node scripts/check-eval-output.mjs evals/sample-outputs/double-diamond-boss-good.md
 node scripts/check-eval-output.mjs evals/sample-outputs/hud-guided-output.md
+node scripts/check-eval-output.mjs evals/sample-outputs/gpt-image-2-controlled-output.md
 node evals/fixtures/tiny-hud-ab/check.mjs
 npm --prefix evals/real-repos/tiny-roguelite-hud test
 npm --prefix evals/live-codex-runs/2026-05-23-tiny-roguelite-hud/workspaces/no-workflow test

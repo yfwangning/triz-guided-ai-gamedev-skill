@@ -1,6 +1,6 @@
 ---
 name: triz-guided-ai-gamedev
-description: Use this skill when the user is doing AI-assisted game development, vibe coding, gameplay prototyping, game UI, game systems, level design, AI-assisted art pipelines, or Unity/Godot/Web game coding and needs help turning natural-language feature requests like "combat is repetitive", "the HUD is noisy", "the boss is boring", "levels feel too linear", or "AI art style drifts" into a small prototype, tradeoff analysis, implementation plan, tests, and iteration loop. Also use it passively and briefly when a non-trivial game-dev request has an obvious tradeoff, such as depth versus complexity, clarity versus clutter, content volume versus consistency, speed versus technical debt, or freedom versus pacing. Use formal framework terminology only when the user asks for underlying principles or a full design pass.
+description: Use this skill when the user is doing AI-assisted game development, vibe coding, gameplay prototyping, game UI, game systems, level design, AI-assisted art pipelines, GPT Image 2 / image-generation prompts, or Unity/Godot/Web game coding and needs help turning natural-language requests like "combat is repetitive", "the HUD is noisy", "the boss is boring", "AI art style drifts", "the generated image adds wrong text", or "the character has extra limbs" into a small prototype, controlled image prompt, tradeoff analysis, implementation plan, tests, and iteration loop. Also use it passively and briefly when a non-trivial request has an obvious tradeoff, such as depth versus complexity, clarity versus clutter, visual richness versus prompt fidelity, content volume versus consistency, speed versus technical debt, or freedom versus pacing. Use formal framework terminology only when the user asks for underlying principles or a full design pass.
 ---
 
 # Natural GameDev Prototype Skill
@@ -25,7 +25,13 @@ User-facing shape:
 What should feel better -> What might get worse -> Smallest playable test -> Verification -> Iteration
 ```
 
-Use it for vibe coding, AI-assisted indie game development, gameplay systems, combat, UI, levels, narrative, art pipelines, and content generation.
+Image-generation shape:
+
+```text
+Desired image -> What must not break -> Content budget -> Prompt -> Review -> Narrow retry
+```
+
+Use it for vibe coding, AI-assisted indie game development, gameplay systems, combat, UI, levels, narrative, art pipelines, GPT Image 2 prompts, and content generation.
 
 ## Passive Mode
 
@@ -43,6 +49,17 @@ Prototype brief:
 ```
 
 Then continue with the requested implementation or recommendation.
+
+For image-generation requests, use this short shape instead:
+
+```markdown
+Image brief:
+- Must show:
+- Must avoid:
+- Content budget:
+- Text/anatomy risk:
+- Check:
+```
 
 Skip the brief when the user asks for a simple bug fix, rename, copy change, asset replacement, direct code edit, or narrow explanation where no design tradeoff needs analysis.
 
@@ -64,6 +81,7 @@ Use these bundled resources when needed:
 - `claude-code/triz-guided-ai-gamedev/templates/coding-agent-prompt.md`
 - `claude-code/triz-guided-ai-gamedev/references/triz-game-patterns.md`
 - `claude-code/triz-guided-ai-gamedev/references/double-diamond-gamedev.md`
+- `claude-code/triz-guided-ai-gamedev/references/gpt-image-2-generation.md`
 - `claude-code/triz-guided-ai-gamedev/examples/`
 
 ## Core Rules
@@ -73,3 +91,4 @@ Use these bundled resources when needed:
 - Keep formal theory hidden unless the user asks for it.
 - Preserve creative divergence when the user asks for brainstorming, then converge before implementation.
 - Include acceptance criteria or a verification check before scaling the idea.
+- For GPT Image 2 or other image generation, prefer a small content budget, explicit non-goals, text-free art when exact typography matters, and a review gate for text, anatomy, extra objects, and style drift.

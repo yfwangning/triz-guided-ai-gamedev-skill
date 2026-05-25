@@ -1,6 +1,6 @@
 ---
 name: triz-guided-ai-gamedev
-description: Use this skill when the user is doing vibe coding, AI game development, gameplay prototyping, game UI, game systems, level design, AI-assisted art pipelines, or Unity/Godot/Web game coding and needs help turning natural-language feature requests like "combat is repetitive", "the HUD is noisy", "the boss is boring", "levels feel too linear", or "AI art style drifts" into a small prototype, tradeoff analysis, implementation plan, tests, and iteration loop. Also use it passively and briefly when a non-trivial game-dev request has an obvious tradeoff, such as depth versus complexity, clarity versus clutter, content volume versus consistency, speed versus technical debt, or freedom versus pacing. Use formal framework terminology only when the user asks for underlying principles or a full design pass.
+description: Use this skill when the user is doing vibe coding, AI game development, gameplay prototyping, game UI, game systems, level design, AI-assisted art pipelines, GPT Image 2 / image-generation prompts, or Unity/Godot/Web game coding and needs help turning natural-language feature requests like "combat is repetitive", "the HUD is noisy", "the boss is boring", "levels feel too linear", "AI art style drifts", "the generated image adds wrong text", or "the character has extra limbs" into a small prototype, controlled image prompt, tradeoff analysis, implementation plan, tests, and iteration loop. Also use it passively and briefly when a non-trivial request has an obvious tradeoff, such as depth versus complexity, clarity versus clutter, visual richness versus prompt fidelity, content volume versus consistency, speed versus technical debt, or freedom versus pacing. Use formal framework terminology only when the user asks for underlying principles or a full design pass.
 ---
 
 # Natural GameDev Prototype Skill
@@ -13,11 +13,15 @@ User-facing shape:
 
 **What should feel better -> What might get worse -> Smallest playable test -> Verification -> Iteration**
 
+Image-generation shape:
+
+**Desired image -> What must not break -> Content budget -> Prompt -> Review -> Narrow retry**
+
 Internal tradeoff-solving shape:
 
 **Goal → Core tradeoff → solution pattern → AI task brief → prototype → test → iteration**
 
-Use it for vibe coding, AI-assisted indie game development, gameplay systems, combat, UI, levels, narrative, art pipelines, and content generation.
+Use it for vibe coding, AI-assisted indie game development, gameplay systems, combat, UI, levels, narrative, art pipelines, GPT Image 2 prompts, and content generation.
 
 Do not treat any framework as a magic answer generator. The goal is to structure the problem, generate constrained options, build the smallest useful prototype, and validate through testing.
 
@@ -38,6 +42,17 @@ Prototype brief:
 
 Then continue with the requested implementation or recommendation.
 
+For GPT Image 2 or other image-generation requests, use a short image brief:
+
+```markdown
+Image brief:
+- Must show:
+- Must avoid:
+- Content budget:
+- Text/anatomy risk:
+- Check:
+```
+
 Skip the brief when the user asks for a simple bug fix, rename, copy change, asset replacement, direct code edit, or narrow explanation where no design tradeoff needs analysis.
 
 Expand into a full design pass only when the user asks for options, strategy, system design, a coding-agent prompt, underlying principles, or help clarifying a vague feature idea.
@@ -49,6 +64,7 @@ Expand into a full design pass only when the user asks for options, strategy, sy
 - Use `templates/double-diamond-pass.md` and `references/double-diamond-gamedev.md` when the user wants brainstorming, more creative directions, or asks not to converge too quickly.
 - Use `templates/coding-agent-prompt.md` when the user wants a task prompt for Claude Code, Codex, or another coding agent.
 - Use `references/triz-game-patterns.md` when the user asks about underlying principles, solution patterns, full principle mapping, ideal final result, separation principles, or when principle selection is not obvious.
+- Use `references/gpt-image-2-generation.md` when the user asks for GPT Image 2 prompts, character art, posters, icons, UI mockups, image text, anatomy control, style consistency, or ways to avoid unwanted details.
 - Use `examples/` only when a similar game-dev tradeoff would make the answer more concrete. Do not load every example by default.
 
 ## Core Workflow
@@ -100,6 +116,7 @@ Common AI GameDev tradeoffs:
 | Gameplay depth | Cognitive load / balance complexity |
 | Content volume | Consistency / quality control |
 | Visual quality | Style coherence / production cost |
+| Visual richness | Prompt fidelity / anatomy / text accuracy |
 | Development speed | Architecture quality / technical debt |
 | AI automation | Debuggability / control |
 | Player freedom | Level pacing / narrative coherence |
@@ -198,6 +215,13 @@ For art/UI:
 - Generate one canonical example before batch production.
 - Use a checklist to evaluate consistency.
 
+For GPT Image 2 and image generation:
+- Define a content budget before writing the final prompt.
+- Keep text out of the image when exact typography matters; add it later as a UI or design layer.
+- If text must be generated, use one short exact phrase, large simple placement, and a dedicated text review.
+- Protect anatomy by reducing subject count, pose complexity, occlusion, and unnecessary props.
+- Split character, background, typography, and UI elements when one prompt tries to do too much.
+
 For game design:
 - Define player decision, feedback, failure state, and reward.
 - Propose a test encounter or greybox level.
@@ -266,6 +290,22 @@ Use this mode only when the user asks for exploration, brainstorming, or creativ
 <Acceptance criteria>
 ```
 
+### Image-generation prompt
+
+```markdown
+## GPT Image 2 prompt brief
+- Goal:
+- Must include:
+- Must not include:
+- Content budget:
+- Text policy:
+- Anatomy / structure check:
+- Review criteria:
+
+## Prompt
+<final prompt>
+```
+
 ## Special Guidance
 
 ### Combat systems
@@ -283,6 +323,9 @@ Prioritize Nested doll, Feedback, Local quality, and Taking out.
 ### AI asset pipeline
 Prioritize Prior action, Copying, Feedback, and Intermediary.
 
+### GPT Image 2 / controlled image generation
+Prioritize Taking out, Prior action, Segmentation, Feedback, and Copying.
+
 ## Safety and Quality Rules
 
 - Do not let AI generate large code changes without a small acceptance test.
@@ -290,3 +333,4 @@ Prioritize Prior action, Copying, Feedback, and Intermediary.
 - Do not overuse formal framework terminology in user-facing output unless helpful.
 - Prioritize playable proof over theoretical completeness.
 - Keep the developer in control: AI proposes, user chooses, prototype validates.
+- Do not fix image-generation errors by adding many more details to the same prompt. First remove non-essential content, isolate text or anatomy risk, and retry with a narrower prompt or edit.

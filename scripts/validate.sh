@@ -32,6 +32,7 @@ node scripts/validate-skill.mjs
 node scripts/check-eval-output.mjs evals/sample-outputs/combat-depth-good.md
 node scripts/check-eval-output.mjs evals/sample-outputs/double-diamond-boss-good.md
 node scripts/check-eval-output.mjs evals/sample-outputs/hud-guided-output.md
+node scripts/check-eval-output.mjs evals/sample-outputs/gpt-image-2-controlled-output.md
 if node scripts/check-eval-output.mjs evals/sample-outputs/boss-generic-output.md >/tmp/triz-guided-ai-gamedev-generic-eval.log 2>&1; then
   echo "Expected generic boss output to fail eval, but it passed." >&2
   exit 1

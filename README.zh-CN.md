@@ -41,6 +41,7 @@ HUD 太吵。
 Boss 二阶段有点无聊。
 关卡像走廊。
 AI 图标生成很快，但风格漂了。
+GPT Image 2 总是多加错误文字或奇怪肢体。
 ```
 
 ## 谁需要这个项目
@@ -50,7 +51,7 @@ AI 图标生成很快，但风格漂了。
 - Solo 游戏开发者：原型做得很快，但不希望每个模糊想法都膨胀成一个新系统。
 - Vibe coder：希望 AI 别只会加功能，而是先找出真正的玩法取舍。
 - 玩法设计者：把“无聊”“太简单”“看不懂”这类模糊反馈，转成可测试的改动。
-- 技术美术和素材流水线搭建者：想要 AI 的速度，但不想要风格漂移和生产混乱。
+- 技术美术和素材流水线搭建者：想要 AI 的速度，但不想要风格漂移、假文字、错误肢体和生产混乱。
 - 小团队：把 Claude Code 或 Codex 当作初级实现者、设计陪练或原型助手。
 - 工具作者：想沉淀一套可复用的游戏设计、AI 编程或创意生产工作流。
 
@@ -155,8 +156,30 @@ Skill 或 `AGENTS.md` 本身会占一点上下文，引导模式也可能先花�
 | “Boss 二阶段有点无聊，但别做得太阴间。” | 想增加张力，但不能造成不公平死亡 |
 | “关卡像走廊。” | 想增加自由度，但不能丢节奏 |
 | “AI 图标生成很快，但看起来像不同游戏。” | 想提高产量，但不能风格漂移 |
+| “GPT Image 2 总是生成错误文字和奇怪肢体。” | 想提高画面丰富度，但不能牺牲提示词服从度 |
 
 用户不需要说“矛盾”“原则”这类正式术语。
+
+## GPT Image 2 生图模式
+
+同一套工作流也可以用于生图 prompt。
+
+对 GPT Image 2 来说，常见问题不一定是“prompt 不够长”，而是一次想要的东西太多：标题文字、复杂肢体、多角色、道具、UI 标签、动态姿势和最终精修，全塞进一张图里。
+
+这个工作流会先帮你定义一个很小的内容预算：
+
+```markdown
+Image brief:
+- Must show: 一个幻想战士海报草图。
+- Must avoid: 假文字、额外肢体、额外角色、额外武器。
+- Content budget: 一个角色、一把剑、一个门洞、一种光照。
+- Text/anatomy risk: 画面不要生成文字；后期单独加标题。
+- Check: 一个头、两只手臂、两条腿、手部合理、没有乱造文字。
+```
+
+然后再写更窄的 prompt。如果文字必须准确，优先生成无文字画面，再把文字作为设计层或 UI 层加上去。如果肢体出错，优先简化姿势或局部编辑，而不是继续往同一个 prompt 里堆更多描述。
+
+查看 [GPT Image 2 受控生图指南](claude-code/triz-guided-ai-gamedev/references/gpt-image-2-generation.md) 和 [海报示例](claude-code/triz-guided-ai-gamedev/examples/gpt-image-2-controlled-character-poster.md)。
 
 ## 30 秒示例
 
@@ -357,6 +380,7 @@ Prototype brief:
 - [不破坏节奏的关卡自由度](claude-code/triz-guided-ai-gamedev/examples/level-freedom-without-lost-pacing.md)
 - [不破坏设定一致性的 NPC 对话变化](claude-code/triz-guided-ai-gamedev/examples/npc-dialogue-variety-without-lore-chaos.md)
 - [不产生风格漂移的 AI 美术批量生成](claude-code/triz-guided-ai-gamedev/examples/ai-art-batches-without-style-drift.md)
+- [避免错误文字和额外肢体的 GPT Image 2 海报](claude-code/triz-guided-ai-gamedev/examples/gpt-image-2-controlled-character-poster.md)
 - [不制造技术债的 solo dev 加速](claude-code/triz-guided-ai-gamedev/examples/solo-dev-speed-without-tech-debt.md)
 
 ## 输出模式
@@ -423,6 +447,8 @@ node scripts/check-eval-output.mjs evals/sample-outputs/combat-depth-good.md
 
 Eval 分数只是结构和范围控制的冒烟测试，不代表设计一定客观正确。截图、playtest 和人的设计判断仍然重要。
 
+对生图来说，对应的人工检查是：如果有文字，文字必须准确；不要出现乱造文字；主体数量正确；肢体合理；没有多余道具；在最终展示尺寸下风格一致。
+
 ## 工作流协同
 
 - [Superpowers 协同](docs/superpowers-integration.md)
@@ -448,6 +474,7 @@ Eval 分数只是结构和范围控制的冒烟测试，不代表设计一定客
 
 - 增加更多类型示例：平台跳跃、战棋 RPG、生存建造、roguelike、cozy sim。
 - 增加 Unity、Godot、Phaser、Unreal 和纯 Web 游戏的引擎特定 prompt。
+- 增加更多 GPT Image 2 示例：图标、角色、UI mockup、商店头图和无文字海报工作流。
 - 增加普通 AI 输出和被动引导输出的对比评估记录。
 - 增加 GitHub 首屏用的短图示或 GIF。
 - 收集社区提交的游戏开发取舍模式。

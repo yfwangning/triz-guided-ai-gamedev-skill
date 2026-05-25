@@ -8,6 +8,7 @@ Use this router before choosing how much process to show. The user should be abl
 |---|---|---|
 | Simple bug fix, rename, copy edit, direct value change | Skip | Do the task directly |
 | Natural game-dev complaint with a likely tradeoff | Passive prototype brief | Five-line `Prototype brief`, then continue |
+| GPT Image 2 or image-generation request with wrong text, extra limbs, unwanted details, or style drift | Image brief | Five-line `Image brief`, then final prompt and review checklist |
 | Vague feature request asking for ideas/options | Full design pass | Target, tradeoff, patterns, three options, recommended prototype |
 | User asks to brainstorm, explore, or avoid early convergence | Double-diamond pass | Problem diverge, problem converge, solution diverge, solution converge |
 | User asks for implementation prompt | Coding-agent prompt | Implementation-ready brief with files, data, runtime behavior, debug, tests |
@@ -23,6 +24,8 @@ Trigger passive prototype mode:
 - "Boss phase 2 is boring, but do not make it cheap."
 - "The level feels like a corridor."
 - "AI-generated icons are fast, but the style is all over the place."
+- "GPT Image 2 keeps adding fake text and extra limbs."
+- "The poster looks cool, but the hands and labels are wrong."
 - "I want to prototype faster, but I am worried the code will become messy."
 
 Skip passive prototype mode:
@@ -52,6 +55,26 @@ Rules:
 - Avoid TRIZ principle names unless requested.
 - Make the useful pattern concrete enough to implement.
 - Do not ask the user to choose between many options unless the request is genuinely ambiguous.
+
+## Passive Image Brief
+
+Use this shape for GPT Image 2 or other image-generation prompts:
+
+```markdown
+Image brief:
+- Must show:
+- Must avoid:
+- Content budget:
+- Text/anatomy risk:
+- Check:
+```
+
+Rules:
+
+- Prefer a small content budget over a long prompt.
+- Keep exact text out of the generated image unless the user explicitly wants to test text rendering.
+- If anatomy matters, reduce subject count, pose complexity, and occlusion.
+- Include non-goals such as no extra characters, no signage, no UI labels, or no decorative writing when those are likely failure modes.
 
 ## Full Design Pass
 

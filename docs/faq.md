@@ -38,6 +38,23 @@ vague game-dev complaint
 -> screenshot/playtest verification
 ```
 
+## Can this help with GPT Image 2 prompts?
+
+Yes. The same guardrail works for image generation when the model adds unwanted content, fake text, extra limbs, or inconsistent style.
+
+The intended sequence is:
+
+```text
+image idea
+-> image brief
+-> content budget
+-> controlled prompt
+-> visual review
+-> narrow retry or edit
+```
+
+The main rule is to avoid asking one image to solve everything at once. For exact typography, generate textless art and add text later. For anatomy, reduce subject count, pose complexity, and occlusion before adding more polish.
+
 ## When should the workflow trigger?
 
 Trigger it for non-trivial game-dev requests with a tradeoff:

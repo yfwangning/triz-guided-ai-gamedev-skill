@@ -41,6 +41,7 @@ The HUD is noisy.
 Boss phase 2 is boring.
 The level feels like a corridor.
 AI icons are fast, but the style drifts.
+GPT Image 2 keeps adding fake text or extra limbs.
 ```
 
 ## Who Needs This
@@ -50,7 +51,7 @@ This project is for people who use AI agents to build games and want better desi
 - Solo game developers who prototype fast but do not want every vague idea to become a new system.
 - Vibe coders who want AI to slow down just enough to find the real gameplay tradeoff.
 - Gameplay designers turning fuzzy feedback like "boring", "too easy", or "confusing" into testable changes.
-- Technical artists and asset pipeline builders who need AI speed without style drift or production chaos.
+- Technical artists and asset pipeline builders who need AI speed without style drift, fake text, broken anatomy, or production chaos.
 - Small teams using Claude Code or Codex as a junior implementer, design sparring partner, or prototype assistant.
 - Toolmakers building reusable workflows for game design, AI-assisted coding, or creative production.
 
@@ -155,8 +156,30 @@ Users can write normal game-dev complaints:
 | "Boss phase 2 is boring, but do not make it cheap." | Add tension without unfair deaths |
 | "The level feels like a corridor." | Add freedom without losing pacing |
 | "AI icons are fast, but they look like different games." | Increase volume without style drift |
+| "GPT Image 2 keeps adding wrong text and weird limbs." | Improve visual richness without losing prompt fidelity |
 
 The user does not need to say formal terms like "contradiction" or "principle".
+
+## GPT Image 2 Mode
+
+The same workflow can guide image-generation prompts.
+
+For GPT Image 2, the common failure is not "the prompt is too short." It is often that the prompt asks for too much at once: title text, complex anatomy, multiple characters, props, UI labels, dramatic action, and final polish in one image.
+
+Use the workflow to define a small content budget first:
+
+```markdown
+Image brief:
+- Must show: One fantasy warrior poster draft.
+- Must avoid: Fake text, extra limbs, extra characters, extra weapons.
+- Content budget: One character, one sword, one doorway, one lighting idea.
+- Text/anatomy risk: Keep the art textless; add typography later.
+- Check: One head, two arms, two legs, plausible hands, no invented words.
+```
+
+Then write a narrower prompt. If exact text matters, generate the art without text and add the typography as a separate design or UI layer. If anatomy fails, simplify the pose or edit the broken region instead of making the whole prompt longer.
+
+See [GPT Image 2 controlled generation](claude-code/triz-guided-ai-gamedev/references/gpt-image-2-generation.md) and [poster example](claude-code/triz-guided-ai-gamedev/examples/gpt-image-2-controlled-character-poster.md).
 
 ## 30-Second Demo
 
@@ -357,6 +380,7 @@ In those cases, the best behavior is to do the task directly and keep the design
 - [Level freedom without lost pacing](claude-code/triz-guided-ai-gamedev/examples/level-freedom-without-lost-pacing.md)
 - [NPC dialogue variety without lore chaos](claude-code/triz-guided-ai-gamedev/examples/npc-dialogue-variety-without-lore-chaos.md)
 - [AI art batches without style drift](claude-code/triz-guided-ai-gamedev/examples/ai-art-batches-without-style-drift.md)
+- [GPT Image 2 poster without wrong text or extra limbs](claude-code/triz-guided-ai-gamedev/examples/gpt-image-2-controlled-character-poster.md)
 - [Solo dev speed without technical debt](claude-code/triz-guided-ai-gamedev/examples/solo-dev-speed-without-tech-debt.md)
 
 ## Output Modes
@@ -423,6 +447,8 @@ node scripts/check-eval-output.mjs evals/sample-outputs/combat-depth-good.md
 
 The eval score is a smoke test for structure and scope control. It is not a claim that the design is objectively correct; screenshots, playtests, and human review still matter.
 
+For image generation, the equivalent human review is: exact text if any, no invented text, correct subject count, plausible anatomy, no unwanted props, and style consistency at final display size.
+
 ## Workflow Compatibility
 
 - [Superpowers integration](docs/superpowers-integration.md)
@@ -448,6 +474,7 @@ The point is to keep AI-assisted game development focused, testable, and reversi
 
 - Add more genre-specific examples: platformer, tactics RPG, survival crafting, roguelike, cozy sim.
 - Add engine-specific prompts for Unity, Godot, Phaser, Unreal, and plain Web games.
+- Add more GPT Image 2 prompt examples for icons, characters, UI mockups, store capsules, and textless poster workflows.
 - Add evaluation transcripts comparing generic AI output with passive guided output.
 - Add a short visual walkthrough or GIF for the GitHub landing section.
 - Add community-submitted tradeoff patterns.

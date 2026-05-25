@@ -14,7 +14,7 @@ Internal tradeoff-solving shape:
 
 **Goal → Core tradeoff → solution pattern → implementation plan → smallest prototype → verification → iteration**
 
-This is intended for vibe coding, AI game development, gameplay systems, UI, levels, narrative tools, asset pipelines, and rapid prototyping.
+This is intended for vibe coding, AI game development, gameplay systems, UI, levels, narrative tools, asset pipelines, GPT Image 2 prompts, controlled image generation, and rapid prototyping.
 
 ## Default behavior
 
@@ -26,6 +26,7 @@ Routing:
 
 - Simple bug fix, rename, copy edit, direct value change: skip the brief and do the task.
 - Natural game-dev complaint with a likely tradeoff: use the five-line prototype brief.
+- GPT Image 2 or image-generation request with risk of wrong text, extra limbs, unwanted objects, or style drift: use a short image brief before writing the final prompt.
 - Vague feature request asking for ideas/options: use a full design pass.
 - User asks to brainstorm, explore, get more creative options, or avoid early convergence: use a double-diamond pass.
 - User asks for implementation prompt: produce a coding-agent prompt.
@@ -50,6 +51,17 @@ Double-diamond pass:
 2. Problem converge: the first tradeoff to solve.
 3. Solution diverge: safe, weird, systemic, content-light, and ambitious options.
 4. Solution converge: smallest playable test and what would prove it works.
+```
+
+For image-generation requests, use:
+
+```markdown
+Image brief:
+- Must show:
+- Must avoid:
+- Content budget:
+- Text/anatomy risk:
+- Check:
 ```
 
 ## Passive trigger
@@ -100,6 +112,9 @@ If the same thing seems to need opposite properties, use separation:
 - Clarity vs clutter: reveal information only when it affects a decision.
 - Freedom vs pacing: add contained optional loops that reconnect before key beats.
 - Content volume vs consistency: approve one canonical example before generating batches.
+- Visual richness vs prompt fidelity: reduce subject count, props, text, and pose complexity before asking for polish.
+- Typography vs image quality: keep exact text out of the generated image unless the text is short, large, and central to the test.
+- Dynamic anatomy vs correctness: use simpler poses, fewer characters, visible structure, and reference images when anatomy matters.
 - Speed vs technical debt: isolate prototypes behind flags, test scenes, and config.
 - Automation vs control: put validators, staging files, and review gates between AI output and runtime assets.
 
@@ -112,6 +127,7 @@ If the same thing seems to need opposite properties, use separation:
 - Preserve existing project architecture and naming conventions.
 - If a change affects gameplay feel, include a short playtest checklist.
 - If a change affects assets/UI, include a style-consistency checklist.
+- If a task affects generated images, include a review checklist for exact text, unwanted text, extra limbs, missing limbs, extra subjects, unwanted props, and style drift.
 - If uncertain between two approaches, implement the lower-risk prototype first.
 
 ## Response format for tasks

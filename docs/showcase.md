@@ -132,3 +132,36 @@ Shareable line:
 ```text
 Generate less first, so the next hundred assets do not drift.
 ```
+
+## 5. GPT Image 2 Wrong Text And Extra Limbs
+
+Natural prompt:
+
+```text
+GPT Image 2 keeps making my fantasy poster look cool, but it adds wrong title text and weird extra limbs.
+```
+
+Generic AI usually does:
+
+- longer prompts;
+- more style adjectives;
+- more negative wording;
+- more characters and props;
+- final typography inside the image.
+
+Guided output:
+
+```markdown
+Image brief:
+- Must show: One polished fantasy warrior poster draft.
+- Must avoid: Fake text, extra limbs, extra characters, extra weapons.
+- Content budget: One character, one sword, one doorway, one lighting idea.
+- Text/anatomy risk: Generate textless art and add typography later.
+- Check: One head, two arms, two legs, plausible hands, no invented words.
+```
+
+Shareable line:
+
+```text
+Do not ask the image model for the poster, title design, UI, crowd scene, and anatomy test all at once.
+```
