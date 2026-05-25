@@ -115,6 +115,7 @@ If the same thing seems to need opposite properties, use separation:
 - Visual richness vs prompt fidelity: reduce subject count, props, text, and pose complexity before asking for polish.
 - Typography vs image quality: keep exact text out of the generated image unless the text is short, large, and central to the test.
 - Dynamic anatomy vs correctness: use simpler poses, fewer characters, visible structure, and reference images when anatomy matters.
+- Detail panels vs anatomy correctness: avoid separate hand closeups in the first full concept sheet; use a second pass or local edit after the main pose is approved.
 - Speed vs technical debt: isolate prototypes behind flags, test scenes, and config.
 - Automation vs control: put validators, staging files, and review gates between AI output and runtime assets.
 

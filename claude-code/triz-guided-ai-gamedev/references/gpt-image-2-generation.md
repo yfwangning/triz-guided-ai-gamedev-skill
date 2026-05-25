@@ -35,6 +35,7 @@ Keep it short. The user should not need to know TRIZ or Double Diamond.
 | More epic composition | Extra objects, noisy layout, unreadable focal point | Limit to one focal subject, one action, one setting |
 | Exact text | Misspellings, invented words, broken Chinese or UI labels | Generate textless art and add text later as a design layer |
 | Character action pose | Extra limbs, fused hands, broken weapons | Use simpler pose, fewer occlusions, visible silhouette, reference image when available |
+| Hand closeups on a full design sheet | Broken fingers, floating nails, hands unrelated to the main pose | Omit hand closeups in pass one; crop/edit from an approved main pose or generate a separate hand sheet |
 | Multiple characters | Limb mixing, identity drift, wrong count | Generate one character first, then compose or edit |
 | Batch assets | Style drift and inconsistent scale | Approve one canonical asset before variants |
 | UI mockup | Hallucinated labels and unusable controls | Generate layout without exact copy, then rebuild UI text in code/design tools |
@@ -47,6 +48,30 @@ Keep it short. The user should not need to know TRIZ or Double Diamond.
 - Feedback: review every output against a checklist before making the prompt more ambitious.
 - Copying: generate variants only after one canonical image is approved.
 - Local quality: solve a risky region with edit/inpaint instead of regenerating the whole image.
+
+## High-Risk Detail Panels
+
+Do not treat "detail panel" as automatically safer. Detail panels can create new failures because the model must invent extra anatomy or props at small scale.
+
+For the first controlled pass:
+
+- omit hand closeups, complex finger poses, and weapon-grip macro panels unless they are the main purpose;
+- show hands only as part of the central full-body pose, with simple readable silhouettes;
+- use material closeups that are low-anatomy risk: fabric, petals, metal, mist, water, crown, or weapon ornament;
+- if hand design matters, create a second hand-focused sheet after the main character is approved;
+- if one generated hand is almost correct, prefer local edit/inpaint over regenerating the whole sheet.
+
+Safer first-pass wording:
+
+```text
+Do not include separate hand closeup panels in this first sheet. Show the hands only on the main full-body character in a simple relaxed pose.
+```
+
+Second-pass hand sheet wording:
+
+```text
+Create a separate hand design sheet using the approved character style. Show three clean hand poses only: relaxed open hand, holding the black lotus scepter, and casting a lotus mist spell. Large hands, plain background, no extra arms, no floating fingers, no jewelry not shown in the reference.
+```
 
 ## Prompt Construction
 
@@ -105,6 +130,7 @@ If the output has extra limbs or broken hands, do not add a long list of anatomi
 - remove secondary objects;
 - use a reference image;
 - edit only the broken region when possible.
+- remove separate hand closeups from the first design sheet and move them to a second pass.
 
 ## Template
 
@@ -155,6 +181,7 @@ Why it is safer:
 
 - Wrong or garbled text: remove text from the image and add it as a separate layer.
 - Extra limbs or broken anatomy: simplify pose, reduce occlusion, reduce subject count, or edit the bad region.
+- Broken hand detail panel: remove hand closeups from the first sheet; make a separate hand sheet or local edit after the main pose is approved.
 - Unwanted signs or labels: add a strict no-text policy and remove background shops, posters, books, screens, or banners.
 - Too many props: cut to one focal prop and one supporting prop.
 - Style drift: approve one canonical image, then ask for variants that match it.

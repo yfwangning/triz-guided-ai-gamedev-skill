@@ -177,7 +177,7 @@ Image brief:
 - Check: One head, two arms, two legs, plausible hands, no invented words.
 ```
 
-Then write a narrower prompt. If exact text matters, generate the art without text and add the typography as a separate design or UI layer. If anatomy fails, simplify the pose or edit the broken region instead of making the whole prompt longer.
+Then write a narrower prompt. If exact text matters, generate the art without text and add the typography as a separate design or UI layer. If anatomy fails, simplify the pose or edit the broken region instead of making the whole prompt longer. If hand details matter, do not ask for hand closeups in the first full sheet; create a second hand-focused pass after the main pose is approved.
 
 See [GPT Image 2 controlled generation](claude-code/triz-guided-ai-gamedev/references/gpt-image-2-generation.md) and [poster example](claude-code/triz-guided-ai-gamedev/examples/gpt-image-2-controlled-character-poster.md).
 

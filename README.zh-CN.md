@@ -177,7 +177,7 @@ Image brief:
 - Check: 一个头、两只手臂、两条腿、手部合理、没有乱造文字。
 ```
 
-然后再写更窄的 prompt。如果文字必须准确，优先生成无文字画面，再把文字作为设计层或 UI 层加上去。如果肢体出错，优先简化姿势或局部编辑，而不是继续往同一个 prompt 里堆更多描述。
+然后再写更窄的 prompt。如果文字必须准确，优先生成无文字画面，再把文字作为设计层或 UI 层加上去。如果肢体出错，优先简化姿势或局部编辑，而不是继续往同一个 prompt 里堆更多描述。如果手部细节很重要，第一张完整设定表里不要放手部特写；等主姿势通过后，再单独做手部设定或局部编辑。
 
 查看 [GPT Image 2 受控生图指南](claude-code/triz-guided-ai-gamedev/references/gpt-image-2-generation.md) 和 [海报示例](claude-code/triz-guided-ai-gamedev/examples/gpt-image-2-controlled-character-poster.md)。
 
